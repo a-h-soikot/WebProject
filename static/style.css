@@ -1,66 +1,77 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
+    font-family: 'Roboto', sans-serif; /* updated font */
+    background-color: #f9f9f9; /* lighter, modern background */
     margin: 0;
     padding: 20px;
-  }
-  
-  .container {
-    max-width: 600px;
-    margin: 0 auto;
+}
+
+.container {
+    max-width: 800px; /* increased width */
+    margin: 40px auto; /* centered with extra margin */
     background-color: #fff;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  h2 {
+    padding: 30px; /* increased padding */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* modern shadow */
+    border-radius: 8px; /* rounded corners */
+}
+
+h2 {
     text-align: center;
-  }
-  
-  form {
+    color: #333; /* modern text color */
+}
+
+form {
     display: flex;
     flex-direction: column;
-  }
-  
-  label {
+}
+
+label {
     margin-top: 10px;
-  }
-  
-  input {
+}
+
+input {
     padding: 8px;
     margin-top: 5px;
-  }
-  
-  button {
+}
+
+button {
     margin-top: 20px;
-    padding: 10px;
-    background-color: #4CAF50;
+    padding: 12px 20px; /* updated padding */
+    background-color: #007ACC; /* modern blue */
     border: none;
     color: white;
     cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #45a049;
-  }
-  
-  .flashes {
+    border-radius: 4px; /* rounded button */
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #005A9E;
+    transform: translateY(-3px); /* subtle hover effect */
+}
+
+.flashes {
     list-style-type: none;
     padding: 0;
-  }
-  
-  .flashes li {
+}
+
+.flashes li {
     padding: 10px;
     margin-bottom: 10px;
-  }
-  
-  .flashes li.success {
+}
+
+.flashes li.success {
     background-color: #d4edda;
     color: #155724;
-  }
-  
-  .flashes li.error {
+}
+
+.flashes li.error {
     background-color: #f8d7da;
     color: #721c24;
-  }
-  
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+        margin: 20px auto;
+    }
+}
