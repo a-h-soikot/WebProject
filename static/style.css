@@ -6,10 +6,10 @@ body {
 }
 
 .container {
-    max-width: 800px; /* increased width */
-    margin: 40px auto; /* centered with extra margin */
+    max-width: 600px; /* reduced from 800px */
+    margin: 30px auto; /* reduced top/bottom margin */
     background-color: #fff;
-    padding: 30px; /* increased padding */
+    padding: 25px; /* reduced padding */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* modern shadow */
     border-radius: 8px; /* rounded corners */
 }
@@ -22,20 +22,32 @@ h2 {
 form {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    align-items: center;
 }
 
 label {
-    margin-top: 10px;
+    margin-top: 12px;
+    font-size: 1em;
+    width: 100%;
+    max-width: 400px;
 }
 
 input {
-    padding: 8px;
+    padding: 10px;
     margin-top: 5px;
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1em;
 }
 
 button {
     margin-top: 20px;
-    padding: 12px 20px; /* updated padding */
+    padding: 12px 30px;
+    min-width: 420px;
+    font-size: 1.1em;
     background-color: #007ACC; /* modern blue */
     border: none;
     color: white;
@@ -69,9 +81,34 @@ button:hover {
     color: #721c24;
 }
 
+.bottom-label {
+    text-align: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.bottom-label a {
+    color: #007ACC;
+    text-decoration: none;
+}
+
+.bottom-label a:hover {
+    text-decoration: underline;
+}
+
 @media (max-width: 600px) {
     .container {
-        padding: 20px;
-        margin: 20px auto;
+        padding: 15px; /* reduced from 20px */
+        margin: 15px auto; /* reduced from 20px */
+    }
+    
+    input {
+        max-width: 100%;
+    }
+    
+    button {
+        width: 100%;
+        max-width: 400px;
+        padding: 10px 20px;
     }
 }
