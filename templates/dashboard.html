@@ -3,6 +3,25 @@
 {% block content %}
 <h2>Welcome, {{ name }}!</h2>
 <p>Email: {{ email }}</p>
-<p>This is your dashboard.</p>
-<a href="{{ url_for('logout') }}">Logout</a>
+
+<div class="profile-section">
+    {% if photo %}
+        <div class="current-photo">
+            <img src="{{ url_for('uploaded_file', filename=photo) }}" alt="Profile photo" style="max-width: 200px;">
+            <a href="{{ url_for('delete_photo') }}" class="delete-btn">Delete Photo</a>
+        </div>
+    {% else %}
+        <p>No profile photo uploaded</p>
+    {% endif %}
+
+    <form action="{{ url_for('upload_photo') }}" method="post" enctype="multipart/form-data">
+        <label for="photo">Upload Profile Photo:</label>
+        <input type="file" name="photo" id="photo" accept="image/*" required>
+        <button type="submit">Upload Photo</button>
+    </form>
+</div>
+
+<div class="bottom-section">
+    <a href="{{ url_for('logout') }}">Logout</a>
+</div>
 {% endblock %}

@@ -96,6 +96,35 @@ button:hover {
     text-decoration: underline;
 }
 
+.profile-section {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.current-photo {
+    margin: 20px 0;
+}
+
+.current-photo img {
+    border-radius: 50%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-bottom: 10px;
+}
+
+.delete-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #dc3545;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}
+
 @media (max-width: 600px) {
     .container {
         padding: 15px; /* reduced from 20px */
