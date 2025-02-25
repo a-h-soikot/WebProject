@@ -1,17 +1,25 @@
 {% extends "base.html" %}
 {% block title %}Login{% endblock %}
 {% block content %}
-<h2>Login</h2>
+<h2>Login to Your Account</h2>
 <form action="{{ url_for('login') }}" method="post">
-  <label for="userid">User ID:</label>
-  <input type="text" name="userid" required>
-
-  <label for="password">Password:</label>
-  <input type="password" name="password" required>
-
-  <button type="submit">Login</button>
+    <div class="form-group">
+        <label for="userid">
+            <i class="fas fa-user" style="margin-right: 8px;"></i>User ID
+        </label>
+        <input type="text" id="userid" name="userid" placeholder="Enter your user ID" required>
+    </div>
+    <div class="form-group">
+        <label for="password">
+            <i class="fas fa-lock" style="margin-right: 8px;"></i>Password
+        </label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+    </div>
+    <button type="submit">
+        <i class="fas fa-sign-in-alt" style="margin-right: 8px;"></i>Login
+    </button>
 </form>
 <div class="bottom-label">
-  <p>Don't have an account? <a href="{{ url_for('register') }}">Register here</a>.</p>
+    Don't have an account? <a href="{{ url_for('register') }}">Register here</a>
 </div>
 {% endblock %}

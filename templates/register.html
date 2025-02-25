@@ -1,23 +1,37 @@
 {% extends "base.html" %}
 {% block title %}Register{% endblock %}
 {% block content %}
-<h2>Register</h2>
+<h2>Create a New Account</h2>
 <form action="{{ url_for('register') }}" method="post">
-  <label for="name">Name:</label>
-  <input type="text" name="name" required>
-
-  <label for="userid">User ID:</label>
-  <input type="text" name="userid" required>
-
-  <label for="password">Password:</label>
-  <input type="password" name="password" required>
-
-  <label for="email">Email:</label>
-  <input type="email" name="email" required>
-
-  <button type="submit">Register</button>
+    <div class="form-group">
+        <label for="name">
+            <i class="fas fa-user" style="margin-right: 8px;"></i>Full Name
+        </label>
+        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+    </div>
+    <div class="form-group">
+        <label for="userid">
+            <i class="fas fa-id-badge" style="margin-right: 8px;"></i>User ID
+        </label>
+        <input type="text" id="userid" name="userid" placeholder="Choose a user ID" required>
+    </div>
+    <div class="form-group">
+        <label for="email">
+            <i class="fas fa-envelope" style="margin-right: 8px;"></i>Email
+        </label>
+        <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+    </div>
+    <div class="form-group">
+        <label for="password">
+            <i class="fas fa-lock" style="margin-right: 8px;"></i>Password
+        </label>
+        <input type="password" id="password" name="password" placeholder="Create a password" required>
+    </div>
+    <button type="submit">
+        <i class="fas fa-user-plus" style="margin-right: 8px;"></i>Register
+    </button>
 </form>
 <div class="bottom-label">
-  <p>Already registered? <a href="{{ url_for('login') }}">Login here</a>.</p>
+    Already have an account? <a href="{{ url_for('login') }}">Login here</a>
 </div>
 {% endblock %}

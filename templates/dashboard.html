@@ -1,28 +1,46 @@
 {% extends "base.html" %}
 {% block title %}Dashboard{% endblock %}
 {% block content %}
-<h2>Welcome, {{ name }}!</h2>
-<p>Email: {{ email }}</p>
+<div class="user-info-card">
+    <h2>Welcome, {{ name }}!</h2>
+    <p><i class="fas fa-envelope"></i> {{ email }}</p>
+</div>
 
 <div class="profile-section">
     {% if photo %}
         <div class="current-photo">
             <img src="{{ url_for('uploaded_file', filename=photo) }}" alt="Profile photo">
-            <a href="{{ url_for('delete_photo') }}" class="delete-btn">Delete Photo</a>
+            <a href="{{ url_for('delete_photo') }}" class="delete-btn">
+                <i class="fas fa-trash-alt" style="margin-right: 8px;"></i> Delete Photo
+            </a>
         </div>
     {% else %}
         <div class="no-photo-message">
+            <i class="fas fa-user-circle" style="font-size: 48px; margin-bottom: 15px; opacity: 0.7;"></i>
             <p>No profile photo uploaded</p>
         </div>
-        <form action="{{ url_for('upload_photo') }}" method="post" enctype="multipart/form-data">
-            <label for="photo">Upload Profile Photo:</label>
-            <input type="file" name="photo" id="photo" accept="image/*" required>
-            <button type="submit">Upload Photo</button>
-        </form>
+        
+        <div class="upload-form">
+            <h3>Upload a Profile Photo</h3>
+            <form action="{{ url_for('upload_photo') }}" method="post" enctype="multipart/form-data">
+                <div class="file-input-container">
+                    <label for="photo" class="file-input-label">
+                        <i class="fas fa-cloud-upload-alt" style="font-size: 32px; color: var(--primary);"></i>
+                        <span>Click to select a file or drag and drop</span>
+                    </label>
+                    <input type="file" name="photo" id="photo" accept="image/*" required>
+                </div>
+                <button type="submit">
+                    <i class="fas fa-upload"></i> Upload Photo
+                </button>
+            </form>
+        </div>
     {% endif %}
 </div>
 
 <div class="bottom-section">
-    <a href="{{ url_for('logout') }}">Logout</a>
+    <a href="{{ url_for('logout') }}">
+        <i class="fas fa-sign-out-alt" style="margin-right: 8px;"></i> Logout
+    </a>
 </div>
 {% endblock %}
